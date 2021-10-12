@@ -1,0 +1,25 @@
+.btn_cls{
+    display:flex;
+    justify-content:space-around;
+}
+
+.btn{
+    height:40px;
+    width:120px;
+    background-color:#C6E377;
+    color:#57837B;  
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.btn::after{
+    color:#ffffff;  
+}
+
+.container{
+    display: absolute;
+    width: 80%;
+    justify-content:center;
+    align-items:center;
+}
