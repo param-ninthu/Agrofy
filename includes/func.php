@@ -87,4 +87,108 @@ function createFarmer($conn, $fname,$lname, $gender,$email,$user_roles, $nic,$mo
   }
 
 
+  function verifyuser($conn){
+    if(isset($_GET['NIC']) && isset($_GET['user-role'])){
+
+      $nic=$_GET['NIC'];
+      $user_role = $_GET['user-role'];
+
+
+      $sql = "INSERT INTO VERIFIED_USER (NIC ,USER_ROLE) VALUES (?, ?);";
+      $verify_user = mysqli_query($conn,$sql); ///
+      $stmt = mysqli_stmt_init($conn); //
+      if(!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../Screens/User_Verification.php?error=stmtfailed");
+        exit();
+      }
+      mysqli_stmt_bind_param($stmt, "ss",$nic,$user_role);
+      mysqli_stmt_execute($stmt);
+      mysqli_stmt_close($stmt);
+
+      
+      header("location: ../Screens/User_Verification.php?nic=$nic&status=verified");
+      exit();  
+    }
+  }
+  
+
+  function rejectuser($conn){
+    if(isset($_GET['NIC']) && isset($_GET['user-role'])){
+
+      $nic=$_GET['NIC'];
+      $user_role = $_GET['user-role'];
+
+
+      $sql = "INSERT INTO NOTVERIFIED_USER (NIC ,USER_ROLE) VALUES (?, ?);";
+      $verify_user = mysqli_query($conn,$sql);
+      $stmt = mysqli_stmt_init($conn);
+      if(!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../Screens/User_Verification.php?error=stmtfailed");
+        exit();
+      }
+      mysqli_stmt_bind_param($stmt, "ss",$nic,$user_role);
+      mysqli_stmt_execute($stmt);
+      mysqli_stmt_close($stmt);
+
+      
+      header("location: ../Screens/User_Verification.php?nic=$nic&status=not_verified");
+      exit();
+        
+      
+    }
+  }
+
+
+  function identifyUser($conn,$uname){
+    $sql = "SELECT USER_ROLE FROM NOTVERIFIED_USER WHERE NIC=?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+      header("location:../Screens/Login.php?error=statmentfailed");
+      exit();
+    }
+
+    mysqli_stmt_bind_param($stmt,"s",$uname);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    if(mysqli_num_rows($result)==0){
+      $sql = "SELECT USER_ROLE FROM VERIFIED_USER WHERE NIC=?";
+      $stmt = mysqli_stmt_init($conn);
+      mysqli_stmt_bind_param($stmt,"s",$uname);
+      mysqli_stmt_execute($stmt);
+      $result = mysqli_stmt_get_result($stmt); 
+      
+        if(mysqli_num_rows($result)==0){
+          $result_value = 'notverified';
+          return $result_value;  //You are not verified yet//
+        }
+        else{
+          $row = mysqli_fetch_assoc($result); // Verified
+          return $row;
+        }
+    }
+    else{
+      $userVerified = 'rejected'; // Rejected
+      return $userVerified;
+    }
+
+  }
+
+
+
+  function userExists($conn,$uname){
+    $userStatus = identifyUser($conn,$uname);
+
+    if($userStatus == 'notverified'){
+      
+    }
+
+  }
+
+
+
+  function userLogin($conn,$uname,$pass){
+    userExists($conn,$uname);
+  }
+
 ?>
