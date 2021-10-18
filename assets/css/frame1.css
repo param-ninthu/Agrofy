@@ -1,0 +1,20 @@
+
+/*main container to divide the page into 2 columns (green and pink)*/
+
+.mainContainer{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    height: 100%;
+}
+
+/*left column of the page*/
+.leftContainer{
+    background-color:#C6E377;
+}
+
+/*right column of the page*/
+.rightContainer{
+    background-color: #FBFAD3;
+}
+
+

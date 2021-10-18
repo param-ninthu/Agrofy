@@ -1,0 +1,44 @@
+/*the style sheet for all edit profiles pages (farmerEditProfile.php, businessEditProfile.php, compostEditProfile.php)*/
+
+
+
+/*use to add styles to the admin register details table*/
+table.editTable{ 
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border-spacing:10 15px; /*keeps space between rows and columns*/
+    
+}
+
+table.editTable td{
+   padding: 10px;
+}
+
+/*change the properties of the textboxes and text areas */
+input[type=text], select, textarea {
+    width: 80%;
+    padding: 12px;
+    border: 1px;
+    border-radius: 4px; /*curves the edges of the textboxes*/               
+    resize: vertical;
+} 
+
+
+
+/*save changes button*/
+
+.button2{
+    background-color: #C6E377; 
+    border: none;
+    padding: 14px 20px;
+    text-align: right;
+    display: inline-block;
+    font-size: 15px;
+    margin-left: 80%;/*locate the button in the right*/
+    margin-bottom: 3%;
+    cursor: pointer; /*change mouse pointer to a hand sign*/
+    border-radius: 12px;/*curves the edges of the button*/
+    color: #57837B;
+    font-weight: bold;
+}
