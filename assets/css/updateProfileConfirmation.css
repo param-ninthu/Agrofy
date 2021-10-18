@@ -1,0 +1,58 @@
+/*the style sheet for updateProfileConfirmation.php page*/
+
+body{
+    background-color: #FBFAD3;
+}
+
+
+/*grey box*/
+.greyBox {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 45%;
+    height:75%;
+    background-color: #C4C4C4;
+}
+
+/*keep left margin for the content inside the grey box */
+.content{
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+
+/*styles for the table*/
+.table1{
+    width:100%;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top:10%;
+}
+
+/*change the properties of the textboxes */
+input[type=text]{
+    width: 100%; 
+    padding: 12px;
+    border: 1px;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+   
+}
+
+/*Cancel and confirm buttons*/
+.button2 {
+    background-color: #C6E377; 
+    border: none;               
+    padding: 14px 20px;/*padding: 14px 20px; /*   1rem  */
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer; /*change mouse pointer to a hand sign*/
+    border-radius: 12px;/*curves the edges of the button*/
+    color: #57837B;
+    font-weight: bold;
+}

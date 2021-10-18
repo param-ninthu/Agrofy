@@ -1,0 +1,99 @@
+/*external stylesheet of shoppingCart.php*/
+
+body{
+    background-color: #FBFAD3;
+}
+
+h2{
+    margin-left: 10%;
+}
+
+/*create a grid with 2 columns*/
+.grid {
+    display: grid;
+    grid-template-columns: 66% 30%;
+    grid-column-gap: 4%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+/*left column of the grid */
+.leftColumn{
+    background-color:C4C4C4;
+    
+    
+    
+}
+
+/*right column of the grid */
+.rightColumn{
+    background-color:C4C4C4;
+    text-align: center;
+}
+
+
+
+
+/*add styles to the shopping cart table*/
+table.shopTable{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 0 15px;/*keeps space between rows*/
+}
+
+table.shopTable th {
+border-bottom: 1px solid black;/*black line after the table heading*/
+}
+
+table.shopTable td{
+   background-color: #ffffff;
+   padding: 10px;
+   
+}
+
+
+/*order table- in the right grey column*/
+table.orderTable{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.orderTable th,td{
+border-bottom: 1px solid black;/*black line after the table heading*/
+padding: 10px;
+}
+
+
+
+/*checkout button */
+.button1 {
+    background-color: #57837B; 
+    border: none;
+    color: white;
+    padding: 14px 40px;
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    margin: 15px;/*gap between log and the button*/
+    cursor: pointer;
+    border-radius: 12px;/*curves the edges of the button*/
+}
+
+/*back button */
+.button2 {
+    background-color: #C6E377; 
+    border: none;               
+    padding: 14px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    margin: 10px;
+    cursor: pointer; /*change mouse pointer to a hand sign*/
+    border-radius: 12px;/*curves the edges of the button*/
+    color: #57837B;
+    font-weight: bold;
+}
