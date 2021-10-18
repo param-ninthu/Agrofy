@@ -1,0 +1,60 @@
+/*external stylesheet of rate.php*/
+
+body{
+    background-color: #FBFAD3;                
+}
+
+/*grey box*/
+.greyBox {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 40%;
+    height:75%;
+    background-color: #C4C4C4;
+    
+}
+
+/*keep left margin for the content inside the grey box */
+.content{
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+/*star image*/
+.starImg{
+    width: 100%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/*change the properties of the textboxes and text areas */
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+/*submit button*/
+.button3{
+    background-color: #C6E377; 
+    width:auto;
+    height:10%;
+    border: none;
+    padding: 0.875rem 0.875rem;
+    text-align: center;
+    display: inline-block;
+    margin-left: 75%;/*locate the button in the right*/               
+    font-size: 1rem;
+    cursor: pointer; /*change mouse pointer to a hand sign*/
+    border-radius: 0.75rem;/*curves the edges of the button*/
+    color: #57837B;
+    font-weight: bold;
+}

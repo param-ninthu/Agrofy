@@ -1,0 +1,39 @@
+/*external stylesheet for logout.php*/
+
+/*white square in the center of the logout page*/
+.whiteSquare {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 40%;/**/
+    height:70%;
+    background-color: #FFFFFF;
+    text-align: center; /*keep all the elements in center*/
+}
+
+
+
+ .logo{
+    margin-top: 15%; 
+    width:60%;/*image size changes when screen size change*/
+    height:auto;/**/
+    display: inline-block;
+}
+
+
+/*logout button*/
+.button1 {
+    width: 60%; /*image size changes when screen size changed*/
+    height: auto;/**/
+    background-color: #57837B; 
+    border: none;
+    color: white;
+    padding: 0.875rem 2rem;/*14px 40px; similar to the usage of % (resizable)*/
+    text-align: center;
+    display: inline-block;
+    font-size:1.25rem;/*20px;*/
+    margin: 0.875rem;/*15px;/*space between logo and the button*/
+    cursor: pointer;
+    border-radius: 0.75rem;/*12px;/*curves the edges of the button*/
+}
+

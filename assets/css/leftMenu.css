@@ -1,0 +1,16 @@
+/*links menu in the left container (green)*/
+.menu /*table*/{
+    width:100%;
+}
+
+
+.menu a{
+    color: black;
+    display: inline-block;/*block;*/
+    padding: 12px;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background-color: #ccc;
+}

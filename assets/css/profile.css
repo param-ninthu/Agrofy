@@ -1,0 +1,45 @@
+/*the style sheet for all profile pages (adminProfile.php, farmerProfile.php, 
+compostSupplierProfile, businessProfile.php)*/
+
+/*styles the content of profile page */
+.profileContent{
+    margin-left: 5%;
+    margin-right: 5%;                
+}
+
+/*header-contains the name of the profile holder and the profile picture */
+header{
+    padding: 30px;
+    color: #000000;             
+    margin-top: 5%;
+    height: 20%;
+    background-image: linear-gradient(#BDB6B6, #ffffff); /*gradient effect(from top to bottom) for the square(grey and white) */
+}
+
+/*profile image styles */
+.ProfileImg {
+    width:70%;
+    height:70%;
+    /*border-radius: 50%;  /*--to make rounded image*/
+}
+
+/*edit profile button*/
+.editProfileButton {
+    background-color: #57837B; 
+    border: none;
+    color: white;
+    padding: 14px 20px;
+    text-align: center;
+    display: inline-block;              
+    margin-left: 80%;/*locate the "edit profile" button in the right of the page */
+    font-size: 15px;               
+    cursor: pointer; /*change mouse pointer to a hand sign*/
+    border-radius: 12px;/*curves the edges of the button*/
+    color: #000000;
+    font-weight: bold;
+}
+
+/*profile details display table*/
+.profileTable td, th{
+    padding: 20px;
+}
