@@ -1,0 +1,29 @@
+/*external style sheet for adminManagement.php*/
+
+h1{
+    text-align: center;
+}
+
+/*add styles to the admin management table*/
+table.adminMgtTable{
+    width: 80%;
+    margin-left: auto; /*centers the table */
+    margin-right: auto;
+    border-spacing: 0 15px;/*keeps spaces between rows*/
+}
+
+table.adminMgtTable th {
+border-bottom: 1px solid black;/*black line after the table heading*/
+}
+
+table.adminMgtTable td{
+   background-color: #ffffff; /*set background colour of table data to white */
+   padding: 10px;
+}
+
+/*style the table consists of "add admin button"and page navigation(1,2 ...) buttons */
+table.adminButtonTable{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}

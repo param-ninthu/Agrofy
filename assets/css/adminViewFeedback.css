@@ -1,0 +1,52 @@
+/*the style sheet for adminVewFeedback.php page*/
+
+h1{
+    text-align: center;
+}
+ /*styles the content of view feedback page */
+ .adminViewFdContent{
+    margin-left: 5%;
+    margin-right: 5%;                
+}
+
+/*use to add styles to the admin- view feedback table*/
+table.adminTable{
+    width: 100%;
+    border-spacing: 0 15px;/*keeps space between rows*/
+}
+
+table.adminTable th {
+border-bottom: 1px solid black;/*black line after the table heading*/
+border-top: 1px solid black;
+}
+
+table.adminTable td{
+   background-color: #ffffff;
+   padding: 10px;
+}
+
+/*add styles to farmer, comp producer and business button table*/
+table.buttonTable{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*add styles to  farmer, comp producer and business buttons*/
+.button1 {
+    background-color: #C6E377; 
+    border: none;               
+    padding: 14px 20px;
+    text-align: center;
+    display: inline-block;                
+    font-size: 15px;
+    margin: 15px;/*gap between table content and the button*/
+    cursor: pointer; /*change mouse pointer to a hand sign*/
+    border-radius: 12px;/*curves the edges of the button*/
+    color: #57837B;
+    font-weight: bold;
+}
+
+.button1:active{ 
+    color: #ffffff; /*change the color of the text inside the button, when it is clicked */
+}

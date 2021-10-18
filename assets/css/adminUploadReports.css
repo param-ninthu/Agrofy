@@ -1,0 +1,63 @@
+/*the style sheet for adminUploadReports.php page*/
+
+/*grey box*/
+.greyBox1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    width: 80%;
+    height: 90%;
+    background-color: #C4C4C4;
+}
+
+/*keep margins for the content inside the grey box */
+.content{
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+
+/*use to add styles to the admin register details table*/
+table .uploadRepTable{
+    border-spacing:0.625rem 0.875rem; /*keeps space between rows and columns*/
+}
+
+table.uploadRepTable td{
+    padding: 0.5rem;
+ }
+
+/*change the properties of the textboxes and text areas */
+input[type=text], select, textarea {
+    width: auto;
+    padding: 0.75rem;
+    border: 1px;
+    border-radius: 0.25rem; /*4px*/
+   margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.375rem;/*6px;*/
+    margin-bottom: 1rem;/*16px;*/
+    resize: vertical;
+} 
+
+
+/*name, date, description and upload buttons (no navigation)*/
+/*both button2 and submitButton2 shares the same properties except the "curser" feature*/
+.button2, .submitButton2 {
+    width: auto;
+    height: 10%;
+    background-color: #C6E377; 
+    border: none;
+    padding: 0.875rem;/*14px 20px;*/
+    text-align: center;
+    display: inline-block;
+    font-size: 1rem;/*15px;*/
+    border-radius: 0.75rem;/*12px;/*curves the edges of the button*/
+    color: #57837B;
+    font-weight: bold;
+}
+
+.submitButton2{
+    cursor: pointer; /*change mouse pointer to a hand sign*/
+    margin-left: 80%;/*locate the submit button in the right */
+}
+
