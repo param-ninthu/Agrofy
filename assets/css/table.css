@@ -1,0 +1,42 @@
+.table_container{
+    margin-top:10%;
+}
+
+
+.table_container .table_cls{
+    margin-top:1rem;
+    display: grid;
+    justify-content: center;
+    color:#57837B;
+    align-items:center;
+    font-size: 1rem;
+}
+
+.table_cls table{
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px #e5e5e5;
+    text-align: left;
+    overflow: hidden;
+    border-spacing: 0 20px;   
+}
+
+.table_cls table thead{
+        box-shadow: 0 5px 10px #e5e5e5;     
+}
+
+.table_cls table thead th{    
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: bold;   
+}
+
+
+td{
+    padding:1rem 2rem;
+    background-color:fff;
+    color: #57837B;
+    text-transform: capitalize;    
+}
+
