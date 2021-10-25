@@ -23,13 +23,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="Farmers_AddProducts.php">
                         <span class="icon"><i class="fa fa-plus-circle" ></i></span>
                         <span class="title">Add Products</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">  
+                    <a href="Farmers_addfeedback.php">  
                         <span class="icon"><i class="fa fa-sticky-note" ></i></span>
                         <span class="title">Add Feedbacks</span>
                     </a>
