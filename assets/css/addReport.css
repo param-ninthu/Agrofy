@@ -23,7 +23,7 @@
 .form_container form .input_container{
     display:grid;
     grid-template-columns:200px 400px;
-    margin-left: 10px;
+    margin-left: 20px;
     margin-top: 20px;
     margin-bottom: 40px;
     align-items:center;

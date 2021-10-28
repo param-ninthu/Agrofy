@@ -1,39 +1,64 @@
-/*external stylesheet for logout.php*/
+*{
+    padding:0;
+    margin:0;
+}
 
-/*white square in the center of the logout page*/
-.whiteSquare {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10%;
-    width: 40%;/**/
-    height:70%;
-    background-color: #FFFFFF;
-    text-align: center; /*keep all the elements in center*/
+.container{
+    display: grid;
+    grid-template-columns:20% 80%;
+    background-color:#FBFAD3;
+    height:100%;
+    width:100%;
+}
+
+.sidenav{
+    background-color:#C6E377;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
 }
 
 
-
- .logo{
-    margin-top: 15%; 
-    width:60%;/*image size changes when screen size change*/
-    height:auto;/**/
-    display: inline-block;
+.main_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
 }
 
+.main_container .logout_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    height:50%;
+    width:20%;
+    border-radius: 15px;
+}
 
-/*logout button*/
-.button1 {
-    width: 60%; /*image size changes when screen size changed*/
-    height: auto;/**/
-    background-color: #57837B; 
-    border: none;
-    color: white;
-    padding: 0.875rem 2rem;/*14px 40px; similar to the usage of % (resizable)*/
-    text-align: center;
-    display: inline-block;
-    font-size:1.25rem;/*20px;*/
-    margin: 0.875rem;/*15px;/*space between logo and the button*/
-    cursor: pointer;
-    border-radius: 0.75rem;/*12px;/*curves the edges of the button*/
+.logo_container{
+    margin-bottom: 20px;
+}
+
+.button_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+.button_container button{
+    display:block;
+    border:none;
+    border-radius: 10px;
+    width:200px;
+    height: 40px;
+    color: #57837B;
+    font-size:1.2rem;
+    font-weight:bold;
+    background-color:#C6E377;
+    cursor:pointer;
 }
 

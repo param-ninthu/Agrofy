@@ -102,6 +102,7 @@
     letter-spacing: 0.1rem;
     font-size: 0.7rem;
     font-weight: bold;
+    
 }
 
 
@@ -109,14 +110,16 @@ td{
     padding:1rem 2rem;
     background-color:fff;
     color: #57837B;
+    text-transform: capitalize;
+    
 }
 
 
 
-.add_btn{
+/* .add_btn{
     height: 2rem;
     width: 5rem;
-}
+} */
 
 
 .add_btn{
@@ -131,11 +134,12 @@ td{
     justify-content:center;
     background-color:#C6E377;
     border:none;
-    color:#57837B;
-    font-size:0.9rem;
-    font-weight:900;
+    color: #57837B;
+    font-weight: 900;
+    font-size: 0.9rem;
     padding-left:10px;
     padding-right:10px;
     border-radius:10px;
     cursor:pointer;
 }
+
