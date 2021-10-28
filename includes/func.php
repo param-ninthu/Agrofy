@@ -2,19 +2,13 @@
 
 function createFarmer($conn, $fname,$lname, $gender,$email,$user_roles, $nic,$mobile,$address,$landaddress,$landhect,$typeofcrops,$numberofemp,$prof,$uname,$pass){
     $userName_exist= identifyUser($conn,$uname); // check whether the username available or not.
-
-    
-
     if($userName_exist === "Nouser"){
-
-  
     $sql = "INSERT INTO FARMER_REG (FIRST_NAME ,LAST_NAME ,GENDER ,EMAIL ,USER_ROLE ,NIC ,MOBILE ,ADDRESS_ ,LAND_ADDRESS  ,LAND_HECTARES ,TYPE_OF_CROP ,NO_OF_EMPLOYEES , PROFILE_IMG  ,USER_NAME ,PASS,VERIFIED,REJECTED) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
     $stmt = mysqli_stmt_init($conn);
     if(!mysqli_stmt_prepare($stmt, $sql)) {
       header("location: ../Screens/Registration_Step3.php?error=stmtfailed");
       exit();
     }
-
     $hashedPwd = password_hash($pass, PASSWORD_DEFAULT);
     $user_role ='farmer';
     $verified_default =false;
@@ -87,6 +81,25 @@ function createFarmer($conn, $fname,$lname, $gender,$email,$user_roles, $nic,$mo
   } 
 
 
+
+  function AddModerator($conn,$fname,$lname,$gender,$job_role,$email,$nic,$mobile,$address,$uname,$pass){
+    $sql = "INSERT INTO MODERATOR_REG (FIRST_NAME ,LAST_NAME ,GENDER ,EMAIL ,JOB_ROLE ,NIC ,MOBILE ,ADDRESS_ ,USER_NAME ,PASS,REJECTED) VALUES (?,?,?,?,?,?,?,?,?,?,?);";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)) {
+      header("location: ../Screens/Add_AgriculturalOfficer.php?error=stmtfailed");
+      exit();
+    }
+
+    $hashedPwd = password_hash($pass, PASSWORD_DEFAULT);
+    $rejected_default = false;
+    mysqli_stmt_bind_param($stmt,"sssssssssss",$fname,$lname,$gender,$email,$job_role,$nic,$mobile,$address,$uname,$hashedPwd,$rejected_default);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../Screens/Admin_Management.php?error=none");
+    exit();
+  }
+
+
   function pwdMatch($pwd,$repwd) {
     $result;
     if($pwd !== $repwd){
@@ -118,6 +131,20 @@ function createFarmer($conn, $fname,$lname, $gender,$email,$user_roles, $nic,$mo
         header("location: ../Screens/User_verification.php?error=userdata_not_found");
         exit();
       }
+  }
+
+
+  function getmoderator($conn){
+    $sql ="SELECT * FROM MODERATOR_REG WHERE REJECTED=FALSE";
+    $result = mysqli_query($conn,$sql);
+
+    if(mysqli_num_rows($result) > 0){
+      return $result;
+    }
+    else{
+      header("location: ../Screens/Admin_Management.php?error=userdata_not_found");
+      exit();
+    }
   }
 
 
@@ -288,6 +315,62 @@ function createFarmer($conn, $fname,$lname, $gender,$email,$user_roles, $nic,$mo
     }
   }
 
+  function identifyModerator($conn,$uname){
+    $sql ="SELECT * FROM MODERATOR_REG WHERE USER_NAME='$uname'";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+      header("location: ../Screens/Login.php?error=statmentfailed-Farmer");
+      exit();
+    }
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $row = mysqli_num_rows($result);
+    $result_data = mysqli_fetch_assoc($result);
+    if($row == 0){
+      $result_data="Moderator_notfound";
+      return $result_data;
+    }
+    else{
+      return $result_data;
+    }
+  }
+
+  function moderatorlogin($conn,$uname,$pass){
+    $userExist = identifyModerator($conn,$uname);
+    if($userExist === "Moderator_notfound"){
+      echo '<script>alert("Invalid Username")</script>';
+      header("location: ../Screens/Login.php?error=Moderator_notfound");
+      exit();
+    }  
+    $rejected =$userExist['REJECTED']; 
+
+    if($rejected== false){
+      $passHashed = $userExist["PASS"];
+      $verifyPass = password_verify($pass,$passHashed);
+      if($verifyPass == false){
+        header("location: ../Screens/Login.php?error=invalidpassword");
+        exit();
+      }
+      else if ($verifyPass == true){
+        session_start();
+        $_SESSION["userName"]=$userExist["USER_NAME"];
+        $_SESSION["name"] =$userExist["FIRST_NAME"];
+        header("location: ../Screens/AgriOfficer_dasboard.php");
+        exit();
+      }
+    }
+
+  }
+
+  function adminLogin($conn,$uname,$pass){
+      if($uname === "adm_001" && $pass === "ninthu"){
+        $_SESSION['userName']="admin_01";
+        $_SESSION["name"] ="krishna";
+        header("location: ../Screens/Admin_Dashboard.php");
+        exit();
+      }
+  }
+
   function deleteUser($conn){
     if(isset($_GET['nic']) && isset($_GET['user-role'])){
        $nic = $_GET['nic'];
@@ -307,5 +390,114 @@ function createFarmer($conn, $fname,$lname, $gender,$email,$user_roles, $nic,$mo
        }
     }
   }
+
+
+  function add_crop($conn,$uname,$crop_name,$crop_type,$crop_description,$crop_image,$crop_price,$crop_quantity){
+      $sql = "INSERT INTO FARMER_PRODUCTS(USER_NAME,CROP_NAME,CROP_TYPE,CROP_DESCRIPTION,CROP_IMAGE,CROP_PRICE,CROP_QUANTITY) VALUES(?,?,?,?,?,?,?);";
+      $stmt = mysqli_stmt_init($conn);
+      if(!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../Screens/Farmers_Addproducts.php?error=stmtfailed");
+        exit();
+      }
+      mysqli_stmt_bind_param($stmt,"sssssss",$uname,$crop_name,$crop_type,$crop_description,$crop_image,$crop_price,$crop_quantity);
+      mysqli_stmt_execute($stmt);
+      mysqli_stmt_close($stmt);
+      header("location: ../Screens/Farmers_Addproducts.php?status=updated");
+      exit();
+  }
+
+  function add_compost($conn,$uname,$compost_name,$compost_type,$compost_description,$compost_image,$compost_price,$compost_quantity){
+    $sql = "INSERT INTO COMPOST_SUP_PRODUCTS(USER_NAME,COMPOST_NAME,COMPOST_TYPE,COMPOST_DESCRIPTION,COMPOST_IMAGE,COMPOST_PRICE,COMPOST_QUANTITY) VALUES(?,?,?,?,?,?,?);";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)) {
+      header("location: ../Screens/CompostSupplierDashboard.php?error=stmtfailed");
+      exit();
+    }
+    mysqli_stmt_bind_param($stmt,"sssssss",$uname,$compost_name,$compost_type,$compost_description,$compost_image,$compost_price,$compost_quantity);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../Screens/CompostSupplierDashboard.php?status=updated");
+    exit();
+  }
+
+
+  function getcrop_details($conn,$user_name){
+    $sql ="SELECT * FROM FARMER_PRODUCTS WHERE USER_NAME='$user_name'";
+    
+    $result = mysqli_query($conn,$sql);
+
+      if(mysqli_num_rows($result) > 0){
+        return $result;
+      }
+      else{
+        header("location: ../Screens/Farmers_AddProducts.php?error=$user_name");
+        exit();
+      }
+  }
+
+  function getcompost_details($conn,$user_name){
+    $sql ="SELECT * FROM COMPOST_SUP_PRODUCTS WHERE USER_NAME='$user_name'";
+    
+    $result = mysqli_query($conn,$sql);
+
+      if(mysqli_num_rows($result) > 0){
+        return $result;
+      }
+      else{
+        header("location: ../Screens/CompostSupplierDashboard.php?error=$user_name");
+        exit();
+      }
+  }
+
+  function compostsup_Viewfeedback($conn){
+    $sql ="SELECT * FROM COMPOST_SUPPLIER_CUSTOMER_FEEDBACK";
+    $result = mysqli_query($conn,$sql);
+
+    if(mysqli_num_rows($result) > 0){
+      return $result;
+    }
+    else{
+      header("location: ../Screens/CompostSupplier_Addfeedback.php?error=userdata_not_found");
+      exit();
+    }
+  }
+
+  function compostsup_Viewfeedback_User($conn,$user_name){
+    $sql ="SELECT * FROM COMPOST_SUPPLIER_CUSTOMER_FEEDBACK WHERE USER_NAME='$user_name'";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt,$sql)){
+      header("location: ../Screens/Login.php?error=statmentfailed-Farmer");
+      exit();
+    }
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $row = mysqli_num_rows($result);
+    $result_data = mysqli_fetch_assoc($result);
+    if($row > 0){
+      return $result_data;
+    }
+    else{
+      header("location: ../Screens/CompostSupplier_Addfeedback.php?error=userdata_not_found");
+      exit();
+    }
+  }
+
+  function update_feedback($conn,$rating,$feedback,$user_name){
+    $sql = "UPDATE COMPOST_SUPPLIER_CUSTOMER_FEEDBACK SET RATING=? , FEEDBACK=? WHERE USER_NAME=?";
+    $stmt = mysqli_stmt_init($conn);
+    if(!mysqli_stmt_prepare($stmt, $sql)) {
+      header("location: ../Screens/User_Verification.php?error=stmtfailed");
+      exit();
+    }
+    $rate_update = $rating."/5";
+    mysqli_stmt_bind_param($stmt,"sss",$rate_update,$feedback,$user_name);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+    header("location: ../Screens/CompostSupplier_Addfeedback.php?status=updated");
+    exit();
+  }
+
+
+
 
 ?>
