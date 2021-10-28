@@ -8,6 +8,11 @@
             {
                 $_SESSION['info'][$key] = $value;
             }
+
+
+            
+
+
         $keys = array_keys($_SESSION['info']);
 
         if(in_array('next',$keys)){
@@ -19,9 +24,10 @@
         else if($selection== "Compost_supplier"){
             header("Location: Registration_Compost.php");
         }
-        else{
+        else if($selection=="Business"){
             header("Location: Registration_Business.php");
         }
+        
     }
 
 ?>

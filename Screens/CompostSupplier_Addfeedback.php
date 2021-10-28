@@ -1,3 +1,11 @@
+<?php
+require_once "./../Database/db.con.php";
+require_once "./../includes/func.php";
+
+$result = compostsup_Viewfeedback($conn);
+?>
+
+
 <html lang="en">
 <head>
     <title>CompostSupplierDashboard</title>
@@ -42,7 +50,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="Logout.php">
                         <span class="icon"><i class="fa fa-sign-out" ></i></span>
                         <span class="title">Log out</span>
                     </a>
@@ -67,24 +75,21 @@
                                         <th>Name</th>
                                         <th>Item Purshased</th>
                                         <th>Rating</th>
-                                        <th>Suggestion</th>
+                                        <th>Feedback</th>
                                         <th></th>                
                                     </thead>
-                                    <tbody>               
+                                    <tbody> 
+                                    <?php 
+                                    if($result){                                        
+                                        while($row = mysqli_fetch_assoc($result)){?>              
                                         <tr>
-                                            <td>Shivu</td>
-                                            <td>Tomato</td>
-                                            <td>XXXXXX</td>
-                                            <td>XXXXXX</td>                                       
-                                            <td><a href="#"><img src="./../assets/icons/pencil_Icon.png"></a></td>
+                                            <td><?php echo $row['FIRST_NAME']; ?></td>
+                                            <td><?php echo $row['ITEM_PURCHASED']; ?></td>
+                                            <td><?php echo $row['RATING']; ?></td>
+                                            <td><?php echo $row['FEEDBACK']; ?></td>                                       
+                                            <td><a href="CompostSupplier_Addfeedback_popup.php?nic=<?php echo $row['USER_NAME']; ?>"><img src="./../assets/icons/pencil_Icon.png"></a></td>
                                         </tr>  
-                                        <tr>
-                                            <td>Ninthu</td>
-                                            <td>Brinjol</td>
-                                            <td>XXXXXX</td>
-                                            <td>XXXXXX</td>
-                                            <td><a href="#"><img src="./../assets/icons/pencil_Icon.png"></a></td>
-                                        </tr>                               
+                                    <?php } } ?>                              
                                     </tbody>
                                 </table>
                             </div>

@@ -1,5 +1,4 @@
 <?php 
-
     session_start();
     
     if(isset($_POST['next'])){
@@ -15,9 +14,7 @@
         }
 
         header("Location: Registration_Step3.php");
-        
     }
-
 ?>
 
 <!DOCTYPE html>

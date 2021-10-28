@@ -4,8 +4,6 @@
         <link rel="stylesheet" href="../assets/css/shoppingCart.css">
     </head>
 
-
-
     <body>
         <div class="grid">
             <div class="leftColumn">

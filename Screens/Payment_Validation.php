@@ -10,20 +10,20 @@
     <div class="container">
         <div class="navigation">
             <ul>
-                <li>
+            <li>
                     <a href="" >
                         <span class="icon"><img src="./../assets/icons/logo.png"/></i></span>
                         <span class="title"><h2>Agrofy</h2></span>
                     </a>
                 </li>
                 <li active=true>
-                    <a href="#" >
+                    <a href="AgriOfficer_dasboard.php" >
                         <span class="icon"><i class="fa fa-users" aria-hidden="true"></i></i></span>
                         <span class="title">User Management</span>
                     </a>
                 </li>
                 <li>
-                    <a href="View_Feedback.php">  
+                    <a href="AgriOfficer_Viewfeedback.php">  
                         <span class="icon"><i class="fa fa-comments" aria-hidden="true"></i></i></span>
                         <span class="title">View Feedback</span>
                     </a>
@@ -33,7 +33,8 @@
                         <span class="icon"><i class="fa fa-money" aria-hidden="true"></i></span>
                         <span class="title">Payment Validation</span>
                     </a>
-                </li>        
+                </li>
+                
                 <li>
                     <a href="Ads_Validation.php">  
                         <span class="icon"><i class="fa fa-plus-circle" aria-hidden="true"></i></span>
@@ -53,7 +54,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="Logout.php">
                         <span class="icon"><i class="fa fa-sign-out" ></i></span>
                         <span class="title">Log out</span>
                     </a>

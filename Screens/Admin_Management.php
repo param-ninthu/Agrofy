@@ -1,3 +1,10 @@
+<?php 
+require_once "./../includes/func.php";
+require_once "./../Database/db.con.php";
+
+$result =getmoderator($conn);
+
+?>
 <html lang="en">
 <head>
     <title>Admins's dashboard</title>
@@ -59,7 +66,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="Logout.php">
                         <span class="icon"><i class="fa fa-sign-out" ></i></span>
                         <span class="title">Log out</span>
                     </a>
@@ -80,46 +87,33 @@
                         <thead>
                             <th>Name</th>
                             <th>NIC</th>
-                            <th>User-Role</th>
+                            <th>Job-Role</th>
+                            <th>Mobile</th>
                             <th>Address</th>
                             <th></th>
                             <th></th>
                             <th></th>
                         </thead>
                         <tbody>
+                            <?php if($result){
+                                  while($row = mysqli_fetch_assoc($result)){ ?>
                             <tr>
-                                <td>Ninthu</td>
-                                <td>991232710v</td>
-                                <td>Farmer</td>
-                                <td>49/52 kovil road kurumankadu vavuniya</td>
+                                <td><?php echo $row['FIRST_NAME'] ?></td>
+                                <td><?php echo $row['NIC'] ?></td>
+                                <td><?php echo $row['JOB_ROLE'] ?></td>
+                                <td><?php echo $row['MOBILE'] ?></td>
+                                <td><?php echo $row['ADDRESS_'] ?></td>
                                 <td><a><img src="./../assets/icons/eye_Icon.png"></a></td>
                                 <td><a><img src="./../assets/icons/pencil_Icon.png"></a></td>
                                 <td><a><img src="./../assets/icons/delete_Icon.png"></a></td>
                             </tr>
-                            <tr>
-                                <td>Ninthu</td>
-                                <td>991232710v</td>
-                                <td>Farmer</td>
-                                <td>49/52 kovil road kurumankadu vavuniya</td>
-                                <td><a><img src="./../assets/icons/eye_Icon.png"></a></td>
-                                <td><a><img src="./../assets/icons/pencil_Icon.png"></a></td>
-                                <td><a><img src="./../assets/icons/delete_Icon.png"></a></td>
-                            </tr>
-                            <tr>
-                                <td>Ninthu</td>
-                                <td>991232710v</td>
-                                <td>Farmer</td>
-                                <td>49/52 kovil road kurumankadu vavuniya</td>
-                                <td><a><img src="./../assets/icons/eye_Icon.png"></a></td>
-                                <td><a><img src="./../assets/icons/pencil_Icon.png"></a></td>
-                                <td><a><img src="./../assets/icons/delete_Icon.png"></a></td>
-                            </tr>
+                            <?php } } ?>
                         </tbody>
                     </table>
                     <div class="add_btn">
-                        <button> 
+                        <button > 
                             <span>Add Admin</span>
-                            <span><img src="./../assets/icons/add.png"></a></span>
+                            <span><a href="./Add_AgriculturalOfficer.php"><img src="./../assets/icons/add.png"></a></span>
                         </button>
                     </div>
                 </div>

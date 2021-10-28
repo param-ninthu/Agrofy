@@ -77,7 +77,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="Logout.php">
                         <span class="icon"><i class="fa fa-sign-out" ></i></span>
                         <span class="title">Log out</span>
                     </a>
@@ -119,7 +119,7 @@
                             <th>Name</th>
                             <th>NIC</th>
                             <th>Mobile</th>
-                            <th>Bussiness Name</th>
+                            <th>Business Name</th>
                             <th>Business Reg_No</th>
                             <th>Profile</th>
                             <th></th>
@@ -143,14 +143,6 @@
                             if($result){                                        
                                 while($row = mysqli_fetch_assoc($result)){?>
                                     <?php if(isset($_POST['Farmer'])) { ?>
-                                
-                                   <!--
-                                       <input type=checkbox .......  <?php  if($row['login']){echo checked;} ?> >
-                                    -->     
-
-
-
-
                             <tr>
                                 <td><?php echo $row['FIRST_NAME']; ?></td>
                                 <td><?php echo $row['NIC']; ?></td>

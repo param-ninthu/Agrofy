@@ -61,66 +61,57 @@
                 </li>
             </ul>
         </div>
+        
         <div class="main">
             <div class="topbar">
                 <div class="toggle" onclick ="toggleMenu();"></div>
             </div>
             <div class="title_main">
-                <h1> Payment Validation </h1>
+                <h1> Feedback </h1>
                 <hr>
             </div>
             <div class="table_container">
                 <div class="btn_cls">
                     <button type="submit" name="Farmer"> <a href="#">Farmer</a></button>
                     <button type="submit" name="Compost"><a href="#">Compost Supplier</a></button>
+                    <button type="submit" name="Business Organization"><a href="#">Business Organisation</a></button>
                 </div>
                 
                 <div class="table_cls">
                     <table>
                         <thead>
                             <th>Name</th>
-                            <th>Description</th>
-                            <th>Item</th>
-                            <th>Price</th>
-                            <th></th>
+                            <th>Feedback</th>
+                            <th>User-Role</th>
                             <th></th>
                             <th></th>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>Ninthu</td>
-                                <td>This advertisement is for</td>
-                                <td>xxxxxxxx</td>
-                                <td>Rs 10000</td>
+                                <td>The feedback is about....</td>
+                                <td>Farmer</td>
                                 <td><a><img src="./../assets/icons/eye_Icon.png"></a></td>
-                                <td><a><img src="./../assets/icons/check.png"></a></td>
-                                <td><a><img src="./../assets/icons/not_checked.png"></a></td>
+                                <td><a><img src="./../assets/icons/delete_Icon.png"></a></td>
                             </tr>
                             <tr>
-                                <td>Ninthu</td>
-                                <td>This advertisement is for</td>
-                                <td>xxxxxxxx</td>
-                                <td>Rs 10000</td>
+                                <td>Ninthu</td>    
+                                <td>The feedback is about....</td>
+                                <td>Farmer</td>
                                 <td><a><img src="./../assets/icons/eye_Icon.png"></a></td>
-                                <td><a><img src="./../assets/icons/check.png"></a></td>
-                                <td><a><img src="./../assets/icons/not_checked.png"></a></td>
+                                <td><a><img src="./../assets/icons/delete_Icon.png"></a></td>
                             </tr>
                             <tr>
-                                <td>Ninthu</td>
-                                <td>This advertisement is for</td>
-                                <td>xxxxxxxx</td>
-                                <td>Rs 10000</td>
+                                <td>Ninthu</td>                               
+                                <td>The feedback is about....</td>
+                                <td>Farmer</td>
                                 <td><a><img src="./../assets/icons/eye_Icon.png"></a></td>
-                                <td><a><img src="./../assets/icons/check.png"></a></td>
-                                <td><a><img src="./../assets/icons/not_checked.png"></a></td>
+                                <td><a><img src="./../assets/icons/delete_Icon.png"></a></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-
             </div>
-            
-        </div>
     </div>
 
     <script>

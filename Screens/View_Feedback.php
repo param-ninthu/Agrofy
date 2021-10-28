@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="Logout.php">
                         <span class="icon"><i class="fa fa-sign-out" ></i></span>
                         <span class="title">Log out</span>
                     </a>
@@ -108,12 +108,6 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="add_btn">
-                        <button> 
-                            <span>Add User</span>
-                            <span><img src="./../assets/icons/add.png"></a></span>
-                        </button>
-                    </div>
                 </div>
 
             </div>

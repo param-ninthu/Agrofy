@@ -41,9 +41,10 @@
                      <span class="details"> Business Name</span>
                      <input type="text" placeholder="Business Name" name="businessname" required />
                  </div>
+
                  <div class="input-box">
-                     <span class="details"> Business Registerd Number</span>
-                     <input type="text" placeholder="Business Registerd Number" name="businessregiterednum" required />
+                     <span class="details"> Business Registered Number</span>
+                     <input type="text" placeholder="Business Registered Number" name="bussiness_reg_num" required />
                  </div>
                  
                  <div class="input-box">

@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-    <title>Farmer's dashboard</title>
+    <title>Business dashboard</title>
     <link rel="stylesheet" type="text/css" href="../assets/css/dashboard.css"/>
     <link rel="stylesheet" type="text/css" href="../assets/css/shop.css"/>
     <!-- <link rel="stylesheet" href="./../assets/FontAwesome/css/font-awesome.min.css"> -->
@@ -17,23 +17,18 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="BussinessDashboard.php">
                         <span class="icon"><i class="fa fa-shopping-bag" ></i></span>
                         <span class="title">Shop</span>
                     </a>
                 </li>
                 <li>
-                    <a href="Farmers_AddProducts.php">
+                    <a href="Business_addFeedaback.php">
                         <span class="icon"><i class="fa fa-plus-circle" ></i></span>
-                        <span class="title">Add Products</span>
+                        <span class="title">Add Feedback</span>
                     </a>
                 </li>
-                <li>
-                    <a href="Farmers_addfeedback.php">  
-                        <span class="icon"><i class="fa fa-sticky-note" ></i></span>
-                        <span class="title">Add Feedbacks</span>
-                    </a>
-                </li>
+                
                 <li>
                     <a href="#">
                         <span class="icon"><img src="./../assets/icons/profile.jfif"/></i></span>
@@ -75,11 +70,11 @@
             <div class="shopping_contents">
                 <div class="product_contents">
                     <div class="product_image">
-                        <img src="./../assets/icons/compost.png"/>
+                        <img src="./../assets/icons/veg.png"/>
                     </div>
                     <div class="product_details">                    
                         <div class="product_title">
-                            <h3> Ruhunu compost </h3>
+                            <h3> Tomato </h3>
                         </div>
                         <div class="product_description">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore suscipit beatae incidunt voluptatibus hic nemo est provident, 
@@ -97,11 +92,11 @@
                 </div>
                 <div class="product_contents">
                     <div class="product_image">
-                        <img src="./../assets/icons/compost.png"/>
+                        <img src="./../assets/icons/veg.png"/>
                     </div>
                     <div class="product_details">                    
                         <div class="product_title">
-                            <h3> Ruhunu compost </h3>
+                            <h3> Tomato </h3>
                         </div>
                         <div class="product_description">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore suscipit beatae incidunt voluptatibus hic nemo est provident, 
@@ -119,11 +114,11 @@
                 </div>
                 <div class="product_contents">
                     <div class="product_image">
-                        <img src="./../assets/icons/compost.png"/>
+                        <img src="./../assets/icons/veg.png"/>
                     </div>
                     <div class="product_details">                    
                         <div class="product_title">
-                            <h3> Ruhunu compost </h3>
+                            <h3> Tomato </h3>
                         </div>
                         <div class="product_description">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore suscipit beatae incidunt voluptatibus hic nemo est provident, 
