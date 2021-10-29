@@ -1,0 +1,125 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+.container{
+    display: grid;
+    grid-template-columns:20% 80%;
+    align-items: center;
+    background-color:#FBFAD3;
+    height:100%;
+    width:100%;
+}
+
+.side_nav{
+    background-color:#C6E377;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+
+
+.main_container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:60vh;
+    padding:5px;
+}
+
+.main_container .form_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:#fff;
+    height:90%;
+    width:30%;
+    border-radius: 15px;
+    padding:5px;
+}
+
+
+
+.title_container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 20px;
+    right:26.5%;
+  
+}
+
+.title_container h2{
+    font-size: 30px;
+    color:#57837B;
+    font-weight: bold;
+}
+
+.title_container hr{
+    position: relative;
+    width:85px;
+    height:3px;
+    background-color:#57837B;
+    left:3px;
+}
+.button_container{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.button_container button{
+    position:relative;
+    border:none;
+    border-radius: 10px;
+    width:30%;
+    height: 40px;
+    color: #57837B;
+    font-size:1.2rem;
+    font-weight:bold;
+    background-color:#C6E377;
+    cursor:pointer;
+
+}
+
+ form{
+    display: flex;
+    flex-direction: column;
+    width:95%;
+    padding:5px;
+}
+
+.input_container{
+    display: flex;
+    flex-direction: row;
+    width:95%;
+    padding:5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+ .input_container label{
+     font-size: 15px;
+     font-weight: bold;
+     color:#57837B;
+     letter-spacing: 0.1rem;
+     margin-bottom: 10px;
+    min-width: 200px;
+ }
+
+.input_container input {
+    width:70%;
+    height:40px;
+    letter-spacing: 0.1rem;
+    background-color:#FBFAD3;
+    color:gray;     
+    border-radius: 5px;
+    border:none;
+    border-bottom: 2px solid #57837B;
+    padding-left:5px;
+}
+
+
