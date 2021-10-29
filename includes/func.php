@@ -20,8 +20,7 @@ function createFarmer($conn, $fname,$lname, $gender,$email,$user_roles, $nic,$mo
     exit();
     }
     else{
-      echo '<script>alert("Username already exist")</script>';
-      header("location: ../Screens/Registration_Step1.php");
+      header("location: ../Screens/Registration_Step1.php?error=username_already_exist");
       exit();
     }
   } 
@@ -47,8 +46,7 @@ function createFarmer($conn, $fname,$lname, $gender,$email,$user_roles, $nic,$mo
     exit(); 
     }
     else{
-      echo '<script>alert("Username already exist")</script>';
-      header("location: ../Screens/Registration_Step1.php");
+      header("location: ../Screens/Registration_Step1.php?error=username_already_exist");
       exit();
     }
   } 
@@ -74,8 +72,7 @@ function createFarmer($conn, $fname,$lname, $gender,$email,$user_roles, $nic,$mo
     exit();
     }
     else{
-      echo '<script>alert("Username already exist")</script>';
-      header("location: ../Screens/Registration_Step1.php");
+      header("location: ../Screens/Registration_Step1.php?error=username_already_exist");
       exit();
     }
   } 
@@ -131,6 +128,29 @@ function createFarmer($conn, $fname,$lname, $gender,$email,$user_roles, $nic,$mo
         header("location: ../Screens/User_verification.php?error=userdata_not_found");
         exit();
       }
+  }
+
+  function getVerifieduser($conn,$user){
+    if($user == 'farmer'){
+      $sql ="SELECT * FROM FARMER_REG WHERE VERIFIED=TRUE AND REJECTED=FALSE";
+    }
+    else if($user == 'Business'){
+      $sql ="SELECT * FROM BUSINESS_REG WHERE VERIFIED=TRUE AND REJECTED=FALSE";
+    }
+    else if($user =='compost'){
+      $sql ="SELECT * FROM COMPOST_SUP_REG WHERE VERIFIED=TRUE AND REJECTED=FALSE";
+    }
+
+    $result = mysqli_query($conn,$sql);
+
+      if(mysqli_num_rows($result) > 0){
+        return $result;
+      }
+      else{
+        header("location: ../Screens/Admin_Dashboard.php?error=userdata_not_found");
+        exit();
+      }
+
   }
 
 
